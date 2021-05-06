@@ -1,7 +1,12 @@
+import { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+	const [flowers, setFlowers] = useState([]);
+
+	useEffect(() => {}, []);
+
 	return (
 		<div className="App">
 			<p>REACT APP</p>
