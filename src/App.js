@@ -5,7 +5,26 @@ import "./App.css";
 function App() {
 	const [flowers, setFlowers] = useState([]);
 
-	useEffect(() => {}, []);
+	useEffect(() => {
+		fetch("http://localhost:4000/graphql", {
+			method: "POST",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				query: `{
+          flowers { 
+            _id
+            kind
+            petals
+          }
+        }`,
+			}),
+		})
+			.then((response) => response.json())
+			.then((data) => setFlowers(data.flowers));
+	}, []);
 
 	return (
 		<div className="App">
