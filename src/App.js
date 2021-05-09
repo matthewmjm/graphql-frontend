@@ -5,7 +5,7 @@ function App() {
 	const [flowers, setFlowers] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:4000/graphql", {
+		fetch("http://localhost:4000/graphql/", {
 			method: "POST",
 			headers: {
 				Accept: "application/json",
